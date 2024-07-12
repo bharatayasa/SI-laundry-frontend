@@ -29,7 +29,8 @@ export default function SidebarMenu() {
                 <div className="list-group">
                     <Link to="/admin/dashboard" className="list-group-item list-group-item-action">Dashboard</Link>
 
-                    <Link to="/admin/users" className="list-group-item list-group-item-action">Users</Link>
+                    <Link to="/admin/pelanggan" className="list-group-item list-group-item-action">Pelanggan</Link>
+
                     <a onClick={logout} className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Logout</a>
                 </div>
             </div>
