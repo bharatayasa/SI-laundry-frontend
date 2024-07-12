@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
-        <div className="p-5 mb-4 bg-light rounded-3 shadow-sm">
-            <div className="container-fluid py-5">
-                <h1 className="display-5 fw-bold">SISTEM INFORMASI LAUNDRY</h1>
-                <p className="col-md-12 fs-4">Belajar Full Stack JavaScript Developer dengan Express dan React di SantriKoding.com</p>
+        <div>
+            <div>
+                <h1>SISTEM INFORMASI LAUNDRY</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, delectus magnam voluptates commodi aperiam odit maxime cupiditate culpa omnis deserunt error nisi id ipsa, laudantium accusantium illum ipsum. Ea, accusantium!</p>
                 <hr />
                 {/* <Link to="/register" className="btn btn-primary btn-lg me-3">REGISTER</Link> */}
-                <Link to="/login" className="btn btn-secondary btn-lg">LOGIN</Link>
+                <Link to="/login">LOGIN</Link>
             </div>
         </div>
     )

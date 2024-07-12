@@ -21,17 +21,17 @@ export default function SidebarMenu() {
     }
 
     return (
-        <div className="card border-0 rounded shadow-sm">
-            <div className="card-header">
+        <div>
+            <div>
                 MAIN MENU
             </div>
-            <div className="card-body">
-                <div className="list-group">
-                    <Link to="/admin/dashboard" className="list-group-item list-group-item-action">Dashboard</Link>
+            <div>
+                <div>
+                    <Link to="/admin/dashboard">Dashboard</Link>
 
-                    <Link to="/admin/pelanggan" className="list-group-item list-group-item-action">Pelanggan</Link>
+                    <Link to="/admin/pelanggan">Pelanggan</Link>
 
-                    <a onClick={logout} className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Logout</a>
+                    <a onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
                 </div>
             </div>
         </div>
