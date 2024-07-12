@@ -71,7 +71,7 @@ return (
 
         <div className="container flex justify-center items-center mx-auto px-4 py-6">
             <form onSubmit={login}>
-                <div className="bg-primary/20 py-7 px-7 rounded-lg">
+                <div className="bg-primary/20 py-7 px-7 rounded-lg my-20">
                     <div className="mb-5">
                         <label className="flex items-center gap-2 max-w-xs"> Username:</label>
                         <input type="text" placeholder="Username" className="input input-bordered input-primary w-full"  value={username} onChange={(e) => setUsername(e.target.value)} />

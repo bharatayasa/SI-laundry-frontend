@@ -48,15 +48,18 @@ export default function Index() {
 
     return (
         <div>
-            <div>
                 <div>
-                    <SidebarMenu />
+                    <SidebarMenu /> 
                 </div>
-                <div>
-                    <div>
-                        <Link to="/admin/pelanggan/CreatePelanggan">ADD PELANGGAN</Link>
+            <div>
+                    <div className='container mx-auto'>
+                        <button className='btn btn-outline btn-primary'>
+                            <Link to="/admin/pelanggan/CreatePelanggan">Tambah Pelanggan</Link>
+                        </button>
                     </div>
-                    <table>
+                <div className='container mx-auto'>
+                    <div className="overflow-x-auto">
+                    <table className="table table-lg table-pin-rows table-pin-cols">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -69,15 +72,20 @@ export default function Index() {
                         <tbody>
                             {pelanggans.length > 0 ? (
                                 pelanggans.map((pelanggan, index) => (
-                                    <tr key={index}>
-                                        <td>{pelanggan.id_pelanggan}</td>
-                                        <td>{pelanggan.nama_pelanggan}</td>
+                                    <tr key={index} className="hover">
+                                        <td className='text-center'>{pelanggan.id_pelanggan}</td>
+                                        <td >{pelanggan.nama_pelanggan}</td>
                                         <td>{pelanggan.tlp_pelanggan}</td>
                                         <td>{pelanggan.alamat_pelanggan}</td>
-
-                                        <td>
-                                        <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`}>EDIT</Link>
-                                            <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)}>DELETE</button>
+                                        <td className='text-center'>
+                                            <div className='flex gap-2 items-center'>
+                                                <div className="btn btn-outline btn-success">
+                                                    <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`}>ubah</Link>
+                                                </div>
+                                                <div className="btn btn-outline btn-secondary">
+                                                    <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)}>hapus</button>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
@@ -92,6 +100,7 @@ export default function Index() {
                             )}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

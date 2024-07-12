@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <div className="bg-primary/20 container mx-auto rounded-md">
-            <div className="py-8">
+            <div className="py-8 my-20">
                 <div className="flex justify-center items-center mb-5">
                     <h1>SISTEM INFORMASI LAUNDRY</h1>
                 </div>
