@@ -9,7 +9,7 @@ export default function Login() {
 
     const { setIsAuthenticated } = useContext(AuthContext);
 
-        const [username, setUsername] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const [validation, setValidation] = useState([]);
@@ -39,15 +39,15 @@ export default function Login() {
     };
 
     return (
-        <div className="row justify-content-center mt-5">
-            <div className="col-md-4">
-                <div className="card border-0 rounded shadow-sm">
-                    <div className="card-body">
+        <div >
+            <div >
+                <div >
+                    <div >
                         <h4>LOGIN</h4>
                         <hr />
                         {
                             validation.errors && (
-                                <div className="alert alert-danger mt-2 pb-0">
+                                <div>
                                     {
                                         validation.errors.map((error, index) => (
                                             <p key={index}>{error.path} : {error.msg}</p>
@@ -58,23 +58,22 @@ export default function Login() {
                         }
                         {
                             loginFailed.message && (
-                                <div className="alert alert-danger mt-2">
+                                <div>
                                     {loginFailed.message}
                                 </div>
                             )
                         }
                         <form onSubmit={login}>
-                            <div className="form-group mb-3">
-                                <label className="mb-1 fw-bold">Username</label>
-                                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control" placeholder="Username" />
+                            <div>
+                                <label>Username</label>
+                                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
                             </div>
 
-                            <div className="form-group mb-3">
-                                <label className="mb-1 fw-bold">Password</label>
-                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control"
-                                    placeholder="Password" />
+                            <div>
+                                <label>Password</label>
+                                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                             </div>
-                            <button type="submit" className="btn btn-primary w-100">LOGIN</button>
+                            <button type="submit" >LOGIN</button>
                         </form>
                     </div>
                 </div>

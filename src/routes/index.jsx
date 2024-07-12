@@ -9,7 +9,7 @@ import Dashboard from "../views/admin/dashboard/index.jsx";
 
 // data pelanggan
 import PelangganIndex from '../views/admin/pelanggan/index.jsx';
-import CreatePelaggan from '../views/admin/pelanggan/CreatePelanggan.jsx';
+import CreatePelanggan from '../views/admin/pelanggan/CreatePelanggan.jsx';
 import EditPelanggan from '../views/admin/pelanggan/EditPelanggan.jsx';
 
 export default function AppRoutes() {
@@ -32,7 +32,7 @@ export default function AppRoutes() {
             } />
             
             <Route path="/admin/pelanggan/CreatePelanggan" element={
-                isAuthenticated ? <CreatePelaggan /> : <Navigate to="/login" replace />
+                isAuthenticated ? <CreatePelanggan /> : <Navigate to="/login" replace />
             } />
 
             <Route path="/admin/pelanggan/EditPelanggan/:id" element={

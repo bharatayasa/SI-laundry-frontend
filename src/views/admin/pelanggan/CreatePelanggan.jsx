@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../services/api';
+import SidebarMenu from '../../../components/SidebarMenu';
 
 
 export default function CreatePelanggan() {
@@ -35,6 +36,9 @@ export default function CreatePelanggan() {
 
     return (
         <div>
+                <div>
+                    <SidebarMenu />
+                </div>
             <div>
                 {
                     validation.errors && (
@@ -48,35 +52,32 @@ export default function CreatePelanggan() {
                     )
                 }
                 <form onSubmit={createPelangganBaru}>
-                    <div className="form-group mb-3">
-                        <label className="mb-1 fw-bold">Nama Pelanggan</label>
+                    <div>
+                        <label>Nama Pelanggan</label>
                         <input 
                             type="text" 
                             value={nama_pelanggan} 
                             onChange={(e) => setNamaPelanggan(e.target.value)} 
-                            className="form-control" 
                             placeholder="Nama Pelanggan" 
                         />
                     </div>
 
-                    <div className="form-group mb-3">
-                        <label className="mb-1 fw-bold">Telpon Pelanggan</label>
+                    <div>
+                        <label>Telpon Pelanggan</label>
                         <input 
                             type="text" 
                             value={tlp_pelanggan} 
                             onChange={(e) => setTlpPelanggan(e.target.value)} 
-                            className="form-control"
                             placeholder="Telpon Pelanggan" 
                         />
                     </div>
 
-                    <div className="form-group mb-3">
-                        <label className="mb-1 fw-bold">Alamat Pelanggan</label>
+                    <div>
+                        <label>Alamat Pelanggan</label>
                         <input 
                             type="text" 
                             value={alamat_pelanggan} 
                             onChange={(e) => setAlamatPelanggan(e.target.value)} 
-                            className="form-control"
                             placeholder="Alamat Pelanggan" 
                         />
                     </div>

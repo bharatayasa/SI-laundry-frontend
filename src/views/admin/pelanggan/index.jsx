@@ -48,15 +48,15 @@ export default function Index() {
 
     return (
         <div>
-            <div className="row">
-                <div className="col-md-3">
+            <div>
+                <div>
                     <SidebarMenu />
                 </div>
-                <div className="col-md-9">
+                <div>
                     <div>
-                        <Link to="/admin/pelanggan/CreatePelamggan">ADD PELANGGAN</Link>
+                        <Link to="/admin/pelanggan/CreatePelanggan">ADD PELANGGAN</Link>
                     </div>
-                    <table className="table table-bordered">
+                    <table>
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -75,16 +75,16 @@ export default function Index() {
                                         <td>{pelanggan.tlp_pelanggan}</td>
                                         <td>{pelanggan.alamat_pelanggan}</td>
 
-                                        <td className="text-center">
-                                        <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`} className="btn btn-sm btn-primary rounded-sm shadow border-0 me-2">EDIT</Link>
-                                            <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)} className="btn btn-sm btn-danger rounded-sm shadow border-0">DELETE</button>
+                                        <td>
+                                        <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`}>EDIT</Link>
+                                            <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)}>DELETE</button>
                                         </td>
                                     </tr>
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan="5" className="text-center">
-                                        <div className="alert alert-danger mb-0">
+                                    <td>
+                                        <div>
                                             Data Belum Tersedia!
                                         </div>
                                     </td>

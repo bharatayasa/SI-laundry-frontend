@@ -14,17 +14,17 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <div className="container mt-5 mb-5">
-            <div className="row">
-                <div className="col-md-3">
+        <div className="">
+            <div className="">
+                <div className="">
                     <SidebarMenu />
                 </div>
-                <div className="col-md-9">
-                    <div className="card border-0 rounded shadow-sm">
-                        <div className="card-header">
+                <div className="">
+                    <div className="">
+                        <div className="">
                             DASHBOARD
                         </div>
-                        <div className="card-body">
+                        <div className="">
                             Selamat Datang, <strong>{user?.username}</strong>
                         </div>
                     </div>

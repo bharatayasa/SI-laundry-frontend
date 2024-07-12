@@ -72,7 +72,7 @@ export default function EditPelanggan() {
     return (
         <div>
             <div>
-                <div className="col-md-3">
+                <div>
                     <SidebarMenu />
                 </div>
             </div>
@@ -82,7 +82,7 @@ export default function EditPelanggan() {
             </div>
             <div>
             {validation.errors && (
-                <div className="alert alert-danger mt-2 pb-0">
+                <div>
                 {validation.errors.map((error, index) => (
                     <p key={index}>
                     {error.path} : {error.msg}
@@ -106,7 +106,7 @@ export default function EditPelanggan() {
                     <input type="text" value={alamat_pelanggan} onChange={(e) => setAlamat_pelanggan(e.target.value)}/>
                 </div>
 
-                <button type="submit" className="btn btn-sm btn-primary">UPDATE</button>
+                <button type="submit">UPDATE</button>
             </form>
             </div>
         </div>
