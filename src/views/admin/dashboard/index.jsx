@@ -14,17 +14,17 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <div className="">
-            <div className="">
-                <div className="">
+        <div>
+            <div>
+                <div>
                     <SidebarMenu />
                 </div>
-                <div className="">
-                    <div className="">
-                        <div className="">
+                <div>
+                    <div>
+                        <div>
                             DASHBOARD
                         </div>
-                        <div className="">
+                        <div>
                             Selamat Datang, <strong>{user?.username}</strong>
                         </div>
                     </div>

@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
-        <div>
-            <div>
-                <h1>SISTEM INFORMASI LAUNDRY</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, delectus magnam voluptates commodi aperiam odit maxime cupiditate culpa omnis deserunt error nisi id ipsa, laudantium accusantium illum ipsum. Ea, accusantium!</p>
-                <hr />
-                {/* <Link to="/register" className="btn btn-primary btn-lg me-3">REGISTER</Link> */}
-                <Link to="/login">LOGIN</Link>
+        <div className="bg-primary/20 container mx-auto rounded-md">
+            <div className="py-8">
+                <div className="flex justify-center items-center mb-5">
+                    <h1>SISTEM INFORMASI LAUNDRY</h1>
+                </div>
+                <div className="flex justify-center items-center mb-5">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, delectus magnam voluptates commodi aperiam odit maxime cupiditate</p>
+                </div>
+
+                <div className="flex justify-center items-center">
+                    <div className="btn btn-outline btn-primary">
+                        <Link to="/login">LOGIN</Link>
+                    </div>
+                </div>
             </div>
         </div>
     )
