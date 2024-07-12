@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 export default function App() {
   return (
     <div>
-    <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div className="container">
-        <Link to="/" className="navbar-brand">HOME</Link>
+    <nav>
+      <div>
+        <Link to="/">HOME</Link>
         <button
-          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -16,19 +15,19 @@ export default function App() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page">Laundry</a>
+        <div id="navbarSupportedContent">
+          <ul>
+            <li>
+              <a aria-current="page">Laundry</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <div className="container mt-5">
+    <div>
       <AppRoutes />
     </div>
   </div>
