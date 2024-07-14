@@ -79,7 +79,7 @@ export default function index() {
             <div>
                 <div className='container mx-auto'>
                     <button className='btn btn-outline btn-primary'>
-                        <Link to="/admin/pelanggan/CreatePelanggan">Tambah</Link>
+                        <Link to="/admin/transaksi/CreateTransaksi">Tambah</Link>
                     </button>
                 </div>
                 <div className='container mx-auto my-4 flex items-center gap-4'>
@@ -133,7 +133,7 @@ export default function index() {
                                             <td>
                                                 <div className='flex gap-2 justify-center'>
                                                     <div className="btn btn-outline btn-success">
-                                                        <Link to={`/admin/transaksi/EditPelanggan/${transaksi.id_transaksi}`}>ubah</Link>
+                                                        <Link to={`/admin/transaksi/EditTransaksi/${transaksi.id_transaksi}`}>ubah</Link>
                                                     </div>
                                                     <div className="btn btn-outline btn-secondary">
                                                         <button onClick={() => deleteTransaksi(transaksi.id_transaksi)}>hapus</button>

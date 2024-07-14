@@ -23,6 +23,9 @@ import EditHarga from '../views/admin/harga/EditHarga.jsx';
 
 // data transaksi
 import TransksiIndex from '../views/admin/transaksi/index.jsx';
+import CreateTransaksi from '../views/admin/transaksi/CreateTransaksi.jsx';
+import EditTransaksi from '../views/admin/transaksi/EditTransaksi.jsx';
+
 export default function AppRoutes() {
     const { isAuthenticated } = useContext(AuthContext);
 
@@ -69,6 +72,12 @@ export default function AppRoutes() {
             {/* transaksi */}
             <Route path="/admin/transaksi" element={
                 isAuthenticated ? <TransksiIndex /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/admin/transaksi/CreateTransaksi" element={
+                isAuthenticated ? <CreateTransaksi /> : <Navigate to="/login" replace />
+            } />
+            <Route path="/admin/transaksi/EditTransaksi/:id" element={
+                isAuthenticated ? <EditTransaksi /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );
