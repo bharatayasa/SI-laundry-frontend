@@ -68,6 +68,9 @@ export default function SidebarMenu() {
                         <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
                             <Link to="/admin/harga">Harga</Link>
                         </li>
+                        <li className={location.pathname === '/admin/transaksi' ? 'active' : ''}>
+                            <Link to="/admin/transaksi">Transaksi</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">

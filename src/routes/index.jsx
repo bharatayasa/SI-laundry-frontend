@@ -20,6 +20,9 @@ import EditPakaian from '../views/admin/pakaian/EditPakaian.jsx';
 // data harga
 import HargaIndex from '../views/admin/harga/index.jsx';
 import EditHarga from '../views/admin/harga/EditHarga.jsx';
+
+// data transaksi
+import TransksiIndex from '../views/admin/transaksi/index.jsx';
 export default function AppRoutes() {
     const { isAuthenticated } = useContext(AuthContext);
 
@@ -61,6 +64,11 @@ export default function AppRoutes() {
             } />
             <Route path="/admin/harga/EditHarga/:id" element={
                 isAuthenticated ? <EditHarga /> : <Navigate to="/login" replace />
+            } />
+
+            {/* transaksi */}
+            <Route path="/admin/transaksi" element={
+                isAuthenticated ? <TransksiIndex /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );
