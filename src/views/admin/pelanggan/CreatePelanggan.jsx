@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import SidebarMenu from '../../../components/SidebarMenu';
 
-
 export default function CreatePelanggan() {
     const navigate = useNavigate(); 
     
@@ -51,39 +50,53 @@ export default function CreatePelanggan() {
                         </div>
                     )
                 }
-                <form onSubmit={createPelangganBaru}>
-                    <div>
-                        <label>Nama Pelanggan</label>
-                        <input 
-                            type="text" 
-                            value={nama_pelanggan} 
-                            onChange={(e) => setNamaPelanggan(e.target.value)} 
-                            placeholder="Nama Pelanggan" 
-                        />
-                    </div>
+                    <form onSubmit={createPelangganBaru}>
+                        <div className='mt-10'>
+                            <div className='bg-primary/20 py-14 mx-[400px] rounded-lg'>
+                                    <div className='flex justify-center flex-wrap mb-3'>
+                                        <label className="form-control w-full max-w-lg">
+                                            <input
+                                                type="text"
+                                                placeholder="Nama Pelanggan"
+                                                className="input input-bordered input-primary w-full"
+                                                value={nama_pelanggan} 
+                                                onChange={(e) => setNamaPelanggan(e.target.value)} 
+                                            />
+                                        </label>
+                                    </div>
 
-                    <div>
-                        <label>Telpon Pelanggan</label>
-                        <input 
-                            type="text" 
-                            value={tlp_pelanggan} 
-                            onChange={(e) => setTlpPelanggan(e.target.value)} 
-                            placeholder="Telpon Pelanggan" 
-                        />
-                    </div>
+                                    <div className='flex justify-center flex-wrap mb-3'>
+                                        <label className="form-control w-full max-w-lg">
+                                            <input
+                                                className="input input-bordered input-primary w-full"
+                                                type="number" 
+                                                value={tlp_pelanggan} 
+                                                onChange={(e) => setTlpPelanggan(e.target.value)} 
+                                                placeholder="Telpon Pelanggan" 
+                                            />
+                                        </label>
+                                    </div>
 
-                    <div>
-                        <label>Alamat Pelanggan</label>
-                        <input 
-                            type="text" 
-                            value={alamat_pelanggan} 
-                            onChange={(e) => setAlamatPelanggan(e.target.value)} 
-                            placeholder="Alamat Pelanggan" 
-                        />
-                    </div>
+                                    <div className='flex justify-center flex-wrap mb-3'>
+                                        <label className="form-control w-full max-w-lg">
+                                            <input
+                                                className="input input-bordered input-primary w-full"
+                                                type="text" 
+                                                value={alamat_pelanggan} 
+                                                onChange={(e) => setAlamatPelanggan(e.target.value)} 
+                                                placeholder="Alamat Pelanggan" 
+                                            />
+                                        </label>
+                                    </div>
 
-                    <button type='submit'>SAVE</button>
-                </form>
+                                    <div className='flex justify-center flex-wrap mt-10'>
+                                        <div className='btn btn-primary'>
+                                            <button type='submit'>Tambahkan</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </form>
             </div>
         </div>
     );

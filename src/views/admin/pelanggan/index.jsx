@@ -48,9 +48,9 @@ export default function Index() {
 
     return (
         <div>
-                <div>
-                    <SidebarMenu /> 
-                </div>
+            <div>
+                <SidebarMenu /> 
+            </div>
             <div>
                     <div className='container mx-auto'>
                         <button className='btn btn-outline btn-primary'>
