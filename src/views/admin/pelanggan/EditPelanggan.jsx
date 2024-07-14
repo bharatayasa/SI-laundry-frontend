@@ -3,6 +3,7 @@ import SidebarMenu from "../../../components/SidebarMenu";
 import { useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import api from "../../../services/api";
+import Footer from "../../../components/Footer";
 
 export default function EditPelanggan() {
     const navigate = useNavigate();
@@ -129,6 +130,7 @@ export default function EditPelanggan() {
             </div>
             </form>
         </div>
+        <Footer />
         </div>
     );
 }

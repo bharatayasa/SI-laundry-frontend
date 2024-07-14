@@ -1,6 +1,7 @@
 import SidebarMenu from '../../../components/SidebarMenu';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
+import Footer from '../../../components/Footer';
 
 export default function Dashboard() {
     const [user, setUser] = useState([]);
@@ -30,6 +31,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

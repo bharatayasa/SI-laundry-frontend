@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import SidebarMenu from '../../../components/SidebarMenu';
+import Footer from '../../../components/Footer';
 
 export default function CreatePelanggan() {
     const navigate = useNavigate(); 
@@ -98,6 +99,7 @@ export default function CreatePelanggan() {
                         </div>
                     </form>
             </div>
+            <Footer />
         </div>
     );
 }
