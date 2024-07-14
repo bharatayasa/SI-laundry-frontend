@@ -5,32 +5,52 @@ import Cookies from "js-cookie";
 import api from "../../../services/api";
 import Footer from "../../../components/Footer";
 
-export default function EditPakaian() {
+export default function EditHarga() {
     const navigate = useNavigate();
     const { id } = useParams();
 
-    const [transaksi_pakaian, setTransaksi_pakaian] = useState('');
-    const [jenis_pakaian, setJenis_pakaian] = useState('');
-    const [jumlah_pakaian, setJumlah_pakaian] = useState('');
+    const [harga_perkilo, setHargaPerkilo] = useState('');
     
     const [validation, setValidation] = useState({});
 
-    const getPakaianById = async () => {
+    const getHargaById = async () => {
         const token = Cookies.get("token");
 
         if (token) {
         api.defaults.headers.common["Authorization"] = token;
 
         try {
-            const response = await api.get(`/pakaian/${id}`);
-            const pakaianData = response.data.data[0];
+            const response = await api.get(`/harga/${id}`);
+            const HargaData = response.data.data[0];
 
-            if (pakaianData) {
-                setTransaksi_pakaian(pakaianData.transaksi_pakaian);
-                setJenis_pakaian(pakaianData.jenis_pakaian);
-                setJumlah_pakaian(pakaianData.jumlah_pakaian);
+            if (HargaData) {
+                setHargaPerkilo(HargaData.harga_perkilo);
             } else {
-            console.log("pakaian not found");
+            console.log("harga not found");
+            }
+        } catch (error) {
+            console.error("There was an error fetching the user details!", error);
+        }
+        } else {
+        console.error("Token is not available!");
+        navigate("/login");
+        }
+    };
+    
+    const getHarga = async () => {
+        const token = Cookies.get("token");
+
+        if (token) {
+        api.defaults.headers.common["Authorization"] = token;
+
+        try {
+            const response = await api.get(`/harga`);
+            const HargaData = response.data.data[0];
+
+            if (HargaData) {
+                setHargaPerkilo(HargaData.harga_perkilo);
+            } else {
+            console.log("harga not found");
             }
         } catch (error) {
             console.error("There was an error fetching the user details!", error);
@@ -42,22 +62,21 @@ export default function EditPakaian() {
     };
 
     useEffect(() => {
-        getPakaianById();
+        getHargaById();
+        getHarga();
     }, []);
 
-    const updatePakaian = async (e) => {
+    const updateHarga = async (e) => {
         e.preventDefault();
 
         const token = Cookies.get("token");
 
         if (token) {
         try {
-            await api.put(`/pakaian/${id}`, {
-            transaksi_pakaian: transaksi_pakaian,
-            jenis_pakaian: jenis_pakaian,
-            jumlah_pakaian: jumlah_pakaian,
+            await api.put(`/harga/${id}`, {
+            harga_perkilo: harga_perkilo,
             });
-            navigate("/admin/pakaian");
+            navigate("/admin/harga");
         } catch (error) {
             setValidation(error.response.data);
         }
@@ -81,45 +100,20 @@ export default function EditPakaian() {
                     ))}
                 </div>
                 )}
-                <form onSubmit={updatePakaian}>
+                <form onSubmit={updateHarga}>
                 <div className="mt-10">
                     <div className="bg-primary/20 py-14 mx-[400px] rounded-lg">
                     <div className="flex justify-center flex-wrap mb-3">
                         <label className="form-control w-full max-w-lg">
                         <input
-                            type="text"
-                            value={transaksi_pakaian}
-                            onChange={(e) => setTransaksi_pakaian(e.target.value)}
-                            placeholder="Transaksi Pakaian"
-                            className="input input-bordered input-primary w-full"
-                        />
-                        </label>
-                    </div>
-
-                    <div className="flex justify-center flex-wrap mb-3">
-                        <label className="form-control w-full max-w-lg">
-                        <input
-                            type="text"
-                            value={jenis_pakaian}
-                            onChange={(e) => setJenis_pakaian(e.target.value)}
-                            placeholder="Jenis Pakaian"
-                            className="input input-bordered input-primary w-full"
-                        />
-                        </label>
-                    </div>
-
-                    <div className="flex justify-center flex-wrap mb-3">
-                        <label className="form-control w-full max-w-lg">
-                        <input
                             type="number"
-                            value={jumlah_pakaian}
-                            onChange={(e) => setJumlah_pakaian(e.target.value)}
-                            placeholder="Jumlah Pakaian"
+                            value={harga_perkilo}
+                            onChange={(e) => setHargaPerkilo(e.target.value)}
+                            placeholder="harga per kilo"
                             className="input input-bordered input-primary w-full"
                         />
                         </label>
                     </div>
-
                     <div className="flex justify-center flex-wrap mt-10">
                         <div className="btn btn-primary">
                             <button type="submit">UPDATE</button>

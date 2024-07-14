@@ -47,6 +47,9 @@ export default function SidebarMenu() {
                             <li className={location.pathname === '/admin/pakaian' ? 'active' : ''}>
                                 <Link to="/admin/pakaian">Pakaian</Link>
                             </li>
+                            <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
+                                <Link to="/admin/harga">Harga</Link>
+                            </li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">Laundry</a>
@@ -61,6 +64,9 @@ export default function SidebarMenu() {
                         </li>
                         <li className={location.pathname === '/admin/pakaian' ? 'active' : ''}>
                             <Link to="/admin/pakaian">Pakaian</Link>
+                        </li>
+                        <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
+                            <Link to="/admin/harga">Harga</Link>
                         </li>
                     </ul>
                 </div>
