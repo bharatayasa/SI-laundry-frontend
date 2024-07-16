@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import Footer from '../../../components/Footer';
 
-export default function index() {
+export default function TransaksiPage() {
     const [transaksis, setTransaksi] = useState([]);
     const [search, setSearch] = useState('');
     const [searchCriteria, setSearchCriteria] = useState('status_transaksi');
@@ -21,7 +21,7 @@ export default function index() {
                 const response = await api.get('/transaksi');
                 setTransaksi(response.data.data);
             } catch (error) {
-                console.error("There was an error fetching the users!", error);
+                console.error("There was an error fetching the transactions!", error);
             }
         } else {
             console.log("Token is not available");
@@ -40,11 +40,34 @@ export default function index() {
 
             try {
                 if (window.confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-                    await api.delete(`/transaksi/${id}`)
+                    await api.delete(`/transaksi/${id}`);
                     fetchDataTransaksi();
                 }
             } catch (error) {
-                console.error("There was an error deleting the user!", error);
+                console.error("There was an error deleting the transaction!", error);
+            }
+        } else {
+            console.error("Token is not available!");
+        }
+    }
+    
+    const downloadTransaksi = async (id) => {
+        const token = Cookies.get('token'); 
+
+        if (token) {
+            api.defaults.headers.common['Authorization'] = token; 
+
+            try {
+                const response = await api.get(`/transaksi/pdf/${id}`, { responseType: 'blob' });
+                const url = window.URL.createObjectURL(new Blob([response.data]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', `transaksi_${id}.pdf`);
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            } catch (error) {
+                console.error("There was an error downloading the .pdf file!", error);
             }
         } else {
             console.error("Token is not available!");
@@ -104,7 +127,7 @@ export default function index() {
                             <thead>
                                 <tr className='text-lg font-bold text-center'>
                                     <th>id_transaksi</th>
-                                    <th>id_harga</th>
+                                    {/* <th>id_harga</th> */}
                                     <th>id_pakaian</th>
                                     <th>id_pelanggan</th>
                                     <th>tanggal_masuk</th>
@@ -121,7 +144,7 @@ export default function index() {
                                     currentItems.map((transaksi, index) => (
                                         <tr key={index} className="hover">
                                             <td>{transaksi.id_transaksi}</td>
-                                            <td>{transaksi.id_harga}</td>
+                                            {/* <td>{transaksi.id_harga}</td> */}
                                             <td>{transaksi.id_pakaian}</td>
                                             <td>{transaksi.id_pelanggan}</td>
                                             <td>{transaksi.tanggal_masuk}</td>
@@ -132,6 +155,9 @@ export default function index() {
                                             <td>{transaksi.transaksi_harga}</td>
                                             <td>
                                                 <div className='flex gap-2 justify-center'>
+                                                    <div className="btn btn-outline btn-accent">
+                                                        <button onClick={() => downloadTransaksi(transaksi.id_transaksi)}>cetak</button>
+                                                    </div>
                                                     <div className="btn btn-outline btn-success">
                                                         <Link to={`/admin/transaksi/EditTransaksi/${transaksi.id_transaksi}`}>ubah</Link>
                                                     </div>
@@ -144,7 +170,7 @@ export default function index() {
                                     ))
                                 ) : (
                                     <tr>
-                                        <td colSpan="5" className='text-center'>
+                                        <td colSpan="11" className='text-center'>
                                             Data Belum Tersedia!
                                         </td>
                                     </tr>

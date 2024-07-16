@@ -45,7 +45,7 @@ export default function Footer() {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © ${new Date().getFullYear()}</p>
+                    <p>Copyright © {new Date().getFullYear()}</p>
                 </aside>
             </footer>
         </div>
