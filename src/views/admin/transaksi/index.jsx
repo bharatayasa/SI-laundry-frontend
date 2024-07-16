@@ -50,7 +50,7 @@ export default function TransaksiPage() {
             console.error("Token is not available!");
         }
     }
-    
+
     const downloadTransaksi = async (id) => {
         const token = Cookies.get('token'); 
 
@@ -127,15 +127,11 @@ export default function TransaksiPage() {
                             <thead>
                                 <tr className='text-lg font-bold text-center'>
                                     <th>id_transaksi</th>
-                                    {/* <th>id_harga</th> */}
                                     <th>id_pakaian</th>
-                                    <th>id_pelanggan</th>
-                                    <th>tanggal_masuk</th>
-                                    <th>harga_transaksi</th>
-                                    <th>berat_transaksi</th>
-                                    <th>tanggal_selesai</th>
-                                    <th>status_transaksi</th>
-                                    <th>transaksi_harga</th>
+                                    <th>nama pelanggan</th>
+                                    <th>tanggal transaksi</th>
+                                    <th>berat</th>
+                                    <th>total dan status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -144,15 +140,27 @@ export default function TransaksiPage() {
                                     currentItems.map((transaksi, index) => (
                                         <tr key={index} className="hover">
                                             <td>{transaksi.id_transaksi}</td>
-                                            {/* <td>{transaksi.id_harga}</td> */}
-                                            <td>{transaksi.id_pakaian}</td>
-                                            <td>{transaksi.id_pelanggan}</td>
-                                            <td>{transaksi.tanggal_masuk}</td>
-                                            <td>{transaksi.harga_transaksi}</td>
-                                            <td>{transaksi.berat_transaksi}</td>
-                                            <td>{transaksi.tanggal_selesai}</td>
-                                            <td>{transaksi.status_transaksi}</td>
-                                            <td>{transaksi.transaksi_harga}</td>
+                                            <td>{transaksi.id_pakaian }</td>
+                                            <td>{transaksi.nama_pelanggan}</td>
+                                            <td>
+                                                <div className='flex gap-1'>
+                                                    <p className='text-primary'>masuk:</p>{transaksi.tanggal_masuk}
+                                                </div>
+                                                <div className='flex gap-1'>
+                                                    <p className='text-secondary'>selesai: </p> { transaksi.tanggal_selesai}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {transaksi.berat_transaksi} Kg
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    {transaksi.transaksi_harga}
+                                                </div>
+                                                <div className='text-accent'>
+                                                    {transaksi.status_transaksi}
+                                                </div>
+                                            </td>
                                             <td>
                                                 <div className='flex gap-2 justify-center'>
                                                     <div className="btn btn-outline btn-accent">

@@ -26,6 +26,9 @@ import TransksiIndex from '../views/admin/transaksi/index.jsx';
 import CreateTransaksi from '../views/admin/transaksi/CreateTransaksi.jsx';
 import EditTransaksi from '../views/admin/transaksi/EditTransaksi.jsx';
 
+// ganti password
+import UpdatePassword from '../views/auth/updatePassword.jsx';
+
 export default function AppRoutes() {
     const { isAuthenticated } = useContext(AuthContext);
 
@@ -78,6 +81,11 @@ export default function AppRoutes() {
             } />
             <Route path="/admin/transaksi/EditTransaksi/:id" element={
                 isAuthenticated ? <EditTransaksi /> : <Navigate to="/login" replace />
+            } />
+
+            {/* ganti password */}
+            <Route path="/admin/ganti/password" element={
+                isAuthenticated ? <UpdatePassword /> : <Navigate to="/login" replace />
             } />
         </Routes>
     );

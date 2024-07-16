@@ -98,12 +98,12 @@ export default function EditPakaian() {
 
                     <div className="flex justify-center flex-wrap mb-3">
                         <label className="form-control w-full max-w-lg">
-                        <input
+                        <textarea
                             type="text"
                             value={jenis_pakaian}
                             onChange={(e) => setJenis_pakaian(e.target.value)}
                             placeholder="Jenis Pakaian"
-                            className="input input-bordered input-primary w-full"
+                            className="textarea textarea-primary"
                         />
                         </label>
                     </div>

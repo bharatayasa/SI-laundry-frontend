@@ -50,6 +50,24 @@ export default function SidebarMenu() {
                             <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
                                 <Link to="/admin/harga">Harga</Link>
                             </li>
+                            <li className={location.pathname === '/admin/transaksi' ? 'active' : ''}>
+                                <Link to="/admin/transaksi">Transaksi</Link>
+                            </li>
+                            <div className="dropdown">
+                                <details className="dropdown-toggle">
+                                    <summary>Pengaturan</summary>
+                                    <div className="dropdown-menu">
+                                        <ul className="p-2">
+                                            <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
+                                                <Link to="/admin/harga">Ubah Harga</Link>
+                                            </li>
+                                            <li className={location.pathname === '/admin/ganti/password' ? 'active' : ''}>
+                                                <Link to="/admin/ganti/password">Ganti Password</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">Laundry</a>
@@ -65,11 +83,27 @@ export default function SidebarMenu() {
                         <li className={location.pathname === '/admin/pakaian' ? 'active' : ''}>
                             <Link to="/admin/pakaian">Pakaian</Link>
                         </li>
-                        <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
-                            <Link to="/admin/harga">Harga</Link>
-                        </li>
+
                         <li className={location.pathname === '/admin/transaksi' ? 'active' : ''}>
                             <Link to="/admin/transaksi">Transaksi</Link>
+                        </li>
+                        <li>
+                        <div className="dropdown">
+                            <details className="dropdown-toggle">
+                            <summary>Pengaturan</summary>
+                            <div className="dropdown-menu">
+                                <ul className="p-2">
+                                    <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
+                                        <Link to="/admin/harga">Ubah Harga</Link>
+                                    </li>
+                                    <li className={location.pathname === '/admin/ganti/password' ? 'active' : ''}>
+                                        <Link to="/admin/ganti/password">Ganti Password</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            </details>
+                        </div>
+
                         </li>
                     </ul>
                 </div>
