@@ -26,9 +26,9 @@ export default function EditPelanggan() {
             const pelangganData = response.data.data[0];
 
             if (pelangganData) {
-            setNama_pelanggan(pelangganData.nama_pelanggan);
-            setTlp_pelanggan(pelangganData.tlp_pelanggan);
-            setAlamat_pelanggan(pelangganData.alamat_pelanggan);
+                setNama_pelanggan(pelangganData.nama_pelanggan);
+                setTlp_pelanggan(pelangganData.tlp_pelanggan);
+                setAlamat_pelanggan(pelangganData.alamat_pelanggan);
             } else {
             console.log("pelanggan not found");
             }

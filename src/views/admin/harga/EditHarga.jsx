@@ -106,7 +106,7 @@ export default function EditHarga() {
                     <div className="flex justify-center flex-wrap mb-3">
                         <label className="form-control w-full max-w-lg">
                         <input
-                            type="number"
+                            type="text"
                             value={harga_perkilo}
                             onChange={(e) => setHargaPerkilo(e.target.value)}
                             placeholder="harga per kilo"
