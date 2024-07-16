@@ -1,8 +1,8 @@
 import axios from 'axios';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const Api = axios.create({
-    baseURL: 'https://om-bhar.et.r.appspot.com'
-    // baseURL: 'http://0.0.0.0:3000'
+    baseURL: BASE_URL
 })
 
 export default Api
