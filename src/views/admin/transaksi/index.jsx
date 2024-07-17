@@ -129,12 +129,12 @@ export default function TransaksiPage() {
                         <table className="table table-lg table-pin-rows table-pin-cols">
                             <thead>
                                 <tr className='text-lg font-bold text-center'>
-                                    <th>id_transaksi</th>
-                                    <th>id_pakaian</th>
-                                    <th>nama pelanggan</th>
-                                    <th>tanggal transaksi</th>
-                                    <th>berat</th>
-                                    <th>total dan status</th>
+                                    <th>ID Transaksi</th>
+                                    <th>ID Pakaian</th>
+                                    <th>Nama Pelanggan</th>
+                                    <th>Tanggal Transaksi</th>
+                                    <th>Berat</th>
+                                    <th>Total dan Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
