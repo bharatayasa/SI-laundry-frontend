@@ -54,6 +54,9 @@ export default function CreatePelanggan() {
                     <form onSubmit={createPelangganBaru}>
                         <div className='mt-10'>
                             <div className='bg-primary/20 py-14 mx-[400px] rounded-lg'>
+                                <div className='text-center text-2xl font-semibold mb-10'>
+                                    <h1>Tambah Pelanggan</h1>
+                                </div>
                                     <div className='flex justify-center flex-wrap mb-3'>
                                         <label className="form-control w-full max-w-lg">
                                             <input

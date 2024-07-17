@@ -31,6 +31,9 @@ export default function Index() {
     return (
         <div className="flex flex-col min-h-screen">
             <SidebarMenu />
+            <div className='text-center text-2xl font-semibold'>
+                <h1>Data Harga</h1>
+            </div>
             <div className="flex-grow">
                 <div className="container mx-auto py-6">
                     <div className="overflow-x-auto">

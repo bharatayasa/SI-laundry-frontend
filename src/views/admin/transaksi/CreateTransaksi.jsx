@@ -97,6 +97,9 @@ export default function CreateTransaksi() {
                 <form onSubmit={createTransaksiBaru}>
                     <div className='mt-10'>
                         <div className='bg-primary/20 py-14 mx-[400px] rounded-lg'>
+                        <div className='text-center text-2xl font-semibold mb-5'>
+                            <h1>Tambah Data Transaksi</h1>
+                        </div>
 
                             <div className='flex justify-center flex-wrap mb-3'>
                                 <label className="form-control w-full max-w-lg">

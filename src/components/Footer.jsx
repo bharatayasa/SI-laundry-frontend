@@ -4,8 +4,13 @@ export default function Footer() {
     return (
         <div className='pt-20'>
             <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
-                <nav className="grid grid-flow-col gap-4">
-                    <h1>Sistem Informasi Laundry</h1>
+                <nav className="gap-4 flex flex-col">
+                    <div>
+                        <h1>JL.IR.H.JUANDA no.374 Denpasar Bali</h1>
+                    </div>
+                    <div>
+                        <h1>Telp: 022-2506374 Hp: 0811228647</h1>
+                    </div>
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4">

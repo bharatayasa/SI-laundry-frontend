@@ -76,6 +76,9 @@ export default function index() {
             <div>
                 <SidebarMenu /> 
             </div>
+            <div className='text-center text-2xl font-semibold'>
+                <h1>Data Pakaian</h1>
+            </div>
             <div>
                 <div className='container mx-auto'>
                     <button className='btn btn-outline btn-primary'>

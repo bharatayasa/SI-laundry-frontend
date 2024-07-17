@@ -99,6 +99,9 @@ export default function TransaksiPage() {
             <div>
                 <SidebarMenu /> 
             </div>
+            <div className='text-center text-2xl font-semibold'>
+                <h1>Data Transaksi</h1>
+            </div>
             <div>
                 <div className='container mx-auto'>
                     <button className='btn btn-outline btn-primary'>

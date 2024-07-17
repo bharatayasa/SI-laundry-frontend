@@ -11,10 +11,19 @@ export default function updatePassword() {
     const [username, setUsername] = useState('');
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showNewPassword, setShowNewPassword] = useState(false);
     
     const [validation, setValidation] = useState({});
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
     
-    // Fungsi create data
+    const togglePasswordVisibilityNew = () => {
+        setShowNewPassword(!showNewPassword);
+    };
+
     const updatePasswordBaru = async (e) => {
         e.preventDefault(); 
         
@@ -53,6 +62,9 @@ export default function updatePassword() {
                     <form onSubmit={updatePasswordBaru}>
                         <div className='mt-10'>
                             <div className='bg-primary/20 py-14 mx-[400px] rounded-lg'>
+                                    <div className='text-center text-2xl font-semibold mb-5'>
+                                        <h1>Update Passwod</h1>
+                                    </div>
                                     <div className='flex justify-center flex-wrap mb-3'>
                                         <label className="form-control w-full max-w-lg">
                                             <input
@@ -65,33 +77,54 @@ export default function updatePassword() {
                                         </label>
                                     </div>
 
-                                    <div className='flex justify-center flex-wrap mb-3'>
-                                        <label className="form-control w-full max-w-lg">
+                                    <div className="flex justify-center mb-3">
+                                        <label className="form-control w-full max-w-lg relative">
                                             <input
-                                                className="input input-bordered input-primary w-full"
-                                                type="password" 
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder="Old Password"
+                                                className="input input-bordered input-primary w-full pr-16"
                                                 value={oldPassword} 
                                                 onChange={(e) => setOldPassword(e.target.value)} 
-                                                placeholder="Password Lama" 
                                             />
+                                            <button
+                                                type="button"
+                                                className="absolute inset-y-0 right-0 px-3 flex items-center"
+                                                onClick={togglePasswordVisibility}
+                                            >
+                                                {showPassword ? (
+                                                    <span>Hide</span>
+                                                ) : (
+                                                    <span>Show</span>
+                                                )}
+                                            </button>
                                         </label>
                                     </div>
 
-                                    <div className='flex justify-center flex-wrap mb-3'>
-                                        <label className="form-control w-full max-w-lg">
+                                    <div className="flex justify-center mb-3">
+                                        <label className="form-control w-full max-w-lg relative">
                                             <input
-                                                className="input input-bordered input-primary w-full"
-                                                type="password" 
+                                                type={showNewPassword ? "text" : "password"}
+                                                placeholder="New Password"
+                                                className="input input-bordered input-primary w-full pr-16"
                                                 value={newPassword} 
                                                 onChange={(e) => setNewPassword(e.target.value)} 
-                                                placeholder="Password Baru" 
                                             />
+                                            <button
+                                                type="button"
+                                                className="absolute inset-y-0 right-0 px-3 flex items-center"
+                                                onClick={togglePasswordVisibilityNew}
+                                            >
+                                                {showNewPassword ? (
+                                                    <span>Hide</span>
+                                                ) : (
+                                                    <span>Show</span>
+                                                )}
+                                            </button>
                                         </label>
                                     </div>
-
                                     <div className='flex justify-center flex-wrap mt-10'>
                                         <div className='btn btn-primary'>
-                                            <button type='submit'>Tambahkan</button>
+                                            <button type='submit'>Ubah</button>
                                         </div>
                                     </div>
                             </div>
