@@ -26,6 +26,7 @@ export default function Dashboard() {
                         <div className='text-center font-semibold text-2xl'>
                             Dashboard
                         </div>
+                        <p>masih buat dashboard</p>
                         <div>
                             Selamat Datang, <strong>{user?.username}</strong>
                         </div>

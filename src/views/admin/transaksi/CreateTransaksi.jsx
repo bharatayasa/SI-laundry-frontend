@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import SidebarMenu from '../../../components/SidebarMenu';
 import Footer from '../../../components/Footer';
+import { Link } from 'react-router-dom';
 
 export default function CreateTransaksi() {
     const navigate = useNavigate(); 
@@ -187,9 +188,14 @@ export default function CreateTransaksi() {
                                 </label>
                             </div>
 
-                            <div className='flex justify-center flex-wrap mt-10'>
+                            <div className='flex justify-center flex-wrap mt-10 gap-3'>
                                 <div className='btn btn-primary'>
                                     <button type='submit'>Tambahkan</button>
+                                </div>
+                                <div className='btn btn-accent'>
+                                    <button>
+                                        <Link to="/admin/transaksi">Batal</Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>

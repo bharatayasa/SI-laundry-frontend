@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import api from "../../../services/api";
 import Footer from "../../../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function EditTransaksi() {
     const navigate = useNavigate();
@@ -213,9 +214,14 @@ export default function EditTransaksi() {
                                     </select>
                                 </label>
                             </div>
-                            <div className="flex justify-center flex-wrap mt-10">
+                            <div className="flex justify-center flex-wrap mt-10 gap-3">
                                 <div className="btn btn-primary">
                                     <button type="submit">UPDATE</button>
+                                </div>
+                                <div className='btn btn-accent'>
+                                    <button>
+                                        <Link to="/admin/transaksi">Batal</Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>

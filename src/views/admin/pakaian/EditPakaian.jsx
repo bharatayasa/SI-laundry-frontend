@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SidebarMenu from "../../../components/SidebarMenu";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import api from "../../../services/api";
 import Footer from "../../../components/Footer";
@@ -123,9 +123,14 @@ export default function EditPakaian() {
                         </label>
                     </div>
 
-                    <div className="flex justify-center flex-wrap mt-10">
+                    <div className="flex justify-center flex-wrap mt-10 gap-3">
                         <div className="btn btn-primary">
                             <button type="submit">UPDATE</button>
+                        </div>
+                        <div className='btn btn-accent'>
+                            <button>
+                                <Link to="/admin/pakaian">Batal</Link>
+                            </button>
                         </div>
                     </div>
                     </div>

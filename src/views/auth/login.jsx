@@ -73,57 +73,57 @@ export default function Login() {
                 </div>
             )}
 
-            <div className="container flex justify-center items-center mx-auto">
+            <div>
                 <form onSubmit={login}>
-                    <div className="bg-primary/20 py-7 px-20 mx-10 rounded-lg my-20">
+                        <div className='mt-10'>
+                            <div className='bg-primary/20 py-14 mx-[450px] rounded-lg'>
+                                    <div className='text-center text-2xl font-semibold mb-5'>
+                                        <h1>Login</h1>
+                                    </div>
+                                    <div className='flex justify-center flex-wrap mb-3'>
+                                        <label className="form-control w-full max-w-lg relative">
+                                            <input
+                                                type="text"
+                                                placeholder="Username"
+                                                className="input input-bordered input-primary w-full"
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
+                                            />
+                                        </label>
+                                    </div>
 
-                        <div className="text-center font-bold mb-5">
-                            <h1>Login</h1>
+                                    <div className="flex justify-center mb-3">
+                                        <label className="form-control w-full max-w-lg relative">
+                                            <input
+                                                type={showPassword ? "text" : "password"}
+                                                placeholder="Password"
+                                                className="input input-bordered input-primary w-full pr-16"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                            />
+                                            <button
+                                                type="button"
+                                                className="absolute inset-y-0 right-0 px-3 flex items-center"
+                                                onClick={togglePasswordVisibility}
+                                            >
+                                                {showPassword ? (
+                                                    <span>Hide</span>
+                                                ) : (
+                                                    <span>Show</span>
+                                                )}
+                                            </button>
+                                        </label>
+                                    </div>
+                                    <div className="flex justify-center items-center mt-10">
+                                        <button
+                                            type="submit"
+                                            className="btn btn-outline btn-primary"
+                                        >
+                                            Login
+                                        </button>
+                                    </div>
+                            </div>
                         </div>
-
-                        <div className="w-full">
-
-                            <div className="mb-5">
-                                <input
-                                    type="text"
-                                    placeholder="Username"
-                                    className="input input-bordered input-primary w-full"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="mb-5 relative">
-                                <input
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="Password"
-                                    className="input input-bordered input-primary w-full"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                                <button
-                                    type="button"
-                                    className="absolute inset-y-0 right-0 px-3 flex items-center"
-                                    onClick={togglePasswordVisibility}
-                                >
-                                    {showPassword ? (
-                                        <p>hide</p>
-                                    ) : (
-                                        <p>show</p>
-                                    )}
-                                </button>
-                            </div>
-
-                            <div className="flex justify-center items-center">
-                                <button
-                                    type="submit"
-                                    className="btn btn-outline btn-primary"
-                                >
-                                    LOGIN
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
