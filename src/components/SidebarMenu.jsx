@@ -70,7 +70,9 @@ export default function SidebarMenu() {
                             </div>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Laundry</a>
+                    <div className="flex ml-20">
+                        <a className="btn btn-ghost text-xl">Laundry</a>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-bold">
@@ -108,7 +110,7 @@ export default function SidebarMenu() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div>
+                    <div className="flex mr-20">
                         <a className="btn" onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
                     </div>
                 </div>

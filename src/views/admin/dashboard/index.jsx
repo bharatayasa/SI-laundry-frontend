@@ -20,10 +20,11 @@ export default function Dashboard() {
                 <div>
                     <SidebarMenu />
                 </div>
-                <div>
+
+                <div className='flex justify-center'>
                     <div>
-                        <div>
-                            DASHBOARD
+                        <div className='text-center font-semibold text-2xl'>
+                            Dashboard
                         </div>
                         <div>
                             Selamat Datang, <strong>{user?.username}</strong>
