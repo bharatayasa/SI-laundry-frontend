@@ -10,11 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coreui/coreui": "^5.0.2",
+    "@coreui/react": "^5.1.0",
     "axios": "^1.7.2",
+    "install": "^0.13.0",
     "js-cookie": "^3.0.5",
+    "npm": "^10.8.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.0"
+    "react-router-dom": "^6.23.0",
+    "recharts": "^2.12.7"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

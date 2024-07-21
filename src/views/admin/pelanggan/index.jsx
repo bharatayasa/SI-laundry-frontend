@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import Footer from '../../../components/Footer';
+import add from "../../../icon/add.svg"
+import deletesvg from "../../../icon/delete.svg"
+import update from "../../../icon/edit.svg"
+import next from "../../../icon/next.svg"
+import back from "../../../icon/backward.svg"
 
 export default function Index() {
     const [pelanggans, setPelanggans] = useState([]);
@@ -83,6 +88,7 @@ export default function Index() {
                 <div className='container mx-auto'>
                     <button className='btn btn-outline btn-primary'>
                         <Link to="/admin/pelanggan/CreatePelanggan">Tambah</Link>
+                        <img className='w-7' src={add} />
                     </button>
                 </div>
                 <div className='container mx-auto my-4 flex items-center gap-4'>
@@ -126,10 +132,11 @@ export default function Index() {
                                             <td>
                                                 <div className='flex gap-2 justify-center'>
                                                     <div className="btn btn-outline btn-success">
-                                                        <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`}>ubah</Link>
+                                                        
+                                                        <Link to={`/admin/pelanggan/EditPelanggan/${pelanggan.id_pelanggan}`}><img src={update} className='w-6'/></Link>
                                                     </div>
                                                     <div className="btn btn-outline btn-secondary">
-                                                        <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)}>hapus</button>
+                                                        <button onClick={() => deletePelanggan(pelanggan.id_pelanggan)}><img src={deletesvg} className='w-6'/></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -147,10 +154,10 @@ export default function Index() {
                     </div>
                     <div className='flex justify-center my-4'>
                         <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className='btn btn-primary mr-2'>
-                            Sebelumnya
+                            <img src={back} className='w-6'/>
                         </button>
                         <button onClick={() => paginate(currentPage + 1)} disabled={indexOfLastItem >= filteredPelanggans.length} className='btn btn-primary'>
-                            Selanjutnya
+                            <img src={next} className='w-6'/>
                         </button>
                     </div>
                 </div>

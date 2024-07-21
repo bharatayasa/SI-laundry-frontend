@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import Cookies from "js-cookie";
 import { AuthContext } from "../../context/AuthContext";
+import show from "../../icon/show.svg"
+import hide from "../../icon/hide.svg"
 
 export default function Login() {
     const navigate = useNavigate();
@@ -107,9 +109,13 @@ export default function Login() {
                                                 onClick={togglePasswordVisibility}
                                             >
                                                 {showPassword ? (
-                                                    <span>Hide</span>
+                                                    <span>
+                                                        <img src={hide} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 ) : (
-                                                    <span>Show</span>
+                                                    <span>
+                                                        <img src={show} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 )}
                                             </button>
                                         </label>

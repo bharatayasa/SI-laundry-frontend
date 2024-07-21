@@ -1,8 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import React, { useContext } from "react";
 import Cookies from 'js-cookie';
-
 import { AuthContext } from '../context/AuthContext';
+import setting from "../icon/setting.svg"
 
 export default function SidebarMenu() {
     const navigate = useNavigate();
@@ -91,19 +91,24 @@ export default function SidebarMenu() {
                         </li>
                         <li>
                         <div className="dropdown">
-                            <details className="dropdown-toggle">
-                            <summary>Pengaturan</summary>
-                            <div className="dropdown-menu">
-                                <ul className="p-2">
-                                    <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
-                                        <Link to="/admin/harga">Ubah Harga</Link>
-                                    </li>
-                                    <li className={location.pathname === '/admin/ganti/password' ? 'active' : ''}>
-                                        <Link to="/admin/ganti/password">Ganti Password</Link>
-                                    </li>
-                                </ul>
+                                <div className="w-7">
+                                    <img src={setting} />
+                                </div>
+                            <div>
+                                <details className="dropdown-toggle">
+                                    <summary>Pengaturan</summary>
+                                    <div className="dropdown-menu">
+                                        <ul className="p-2">
+                                            <li className={location.pathname === '/admin/harga' ? 'active' : ''}>
+                                                <Link to="/admin/harga">Ubah Harga</Link>
+                                            </li>
+                                            <li className={location.pathname === '/admin/ganti/password' ? 'active' : ''}>
+                                                <Link to="/admin/ganti/password">Ganti Password</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
                             </div>
-                            </details>
                         </div>
 
                         </li>
@@ -111,7 +116,9 @@ export default function SidebarMenu() {
                 </div>
                 <div className="navbar-end">
                     <div className="flex mr-20">
-                        <a className="btn" onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
+                        <span>
+                            <a className="btn" onClick={logout} style={{ cursor: 'pointer' }}>Logout</a>
+                        </span>
                     </div>
                 </div>
             </div>

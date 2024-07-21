@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import Footer from '../../../components/Footer';
+import add from "../../../icon/add.svg"
+import deletesvg from "../../../icon/delete.svg"
+import update from "../../../icon/edit.svg"
+import next from "../../../icon/next.svg"
+import back from "../../../icon/backward.svg"
+import print from "../../../icon/print.svg"
 
 export default function TransaksiPage() {
     const [transaksis, setTransaksi] = useState([]);
@@ -106,12 +112,13 @@ export default function TransaksiPage() {
                 <div className='container mx-auto'>
                     <button className='btn btn-outline btn-primary'>
                         <Link to="/admin/transaksi/CreateTransaksi">Tambah</Link>
+                        <img className='w-7' src={add} />
                     </button>
                 </div>
                 <div className='container mx-auto my-4 flex items-center gap-4'>
                     <input
                         type="text"
-                        placeholder="Search Pelanggan"
+                        placeholder="Search status"
                         value={search}
                         onChange={handleSearchChange}
                         className="input input-bordered w-full max-w-xs"
@@ -121,7 +128,7 @@ export default function TransaksiPage() {
                         onChange={handleSearchCriteriaChange}
                         className="select select-bordered w-full max-w-xs"
                     >
-                        <option value="status_transaksi">status_transaksi</option>
+                        <option value="status_transaksi">Status Transaksi</option>
                     </select>
                 </div>
                 <div className='container mx-auto'>
@@ -142,8 +149,8 @@ export default function TransaksiPage() {
                                 {currentItems.length > 0 ? (
                                     currentItems.map((transaksi, index) => (
                                         <tr key={index} className="hover">
-                                            <td>{transaksi.id_transaksi}</td>
-                                            <td>{transaksi.id_pakaian }</td>
+                                            <td className='text-center'>{transaksi.id_transaksi}</td>
+                                            <td className='text-center'>{transaksi.id_pakaian }</td>
                                             <td>{transaksi.nama_pelanggan}</td>
                                             <td>
                                                 <div className='flex gap-1'>
@@ -167,13 +174,13 @@ export default function TransaksiPage() {
                                             <td>
                                                 <div className='flex gap-2 justify-center'>
                                                     <div className="btn btn-outline btn-accent">
-                                                        <button onClick={() => downloadTransaksi(transaksi.id_transaksi)}>cetak</button>
+                                                        <button onClick={() => downloadTransaksi(transaksi.id_transaksi)}><img className='w-7' src={print} /></button>
                                                     </div>
                                                     <div className="btn btn-outline btn-success">
-                                                        <Link to={`/admin/transaksi/EditTransaksi/${transaksi.id_transaksi}`}>ubah</Link>
+                                                        <Link to={`/admin/transaksi/EditTransaksi/${transaksi.id_transaksi}`}><img className='w-7' src={update} /></Link>
                                                     </div>
                                                     <div className="btn btn-outline btn-secondary">
-                                                        <button onClick={() => deleteTransaksi(transaksi.id_transaksi)}>hapus</button>
+                                                        <button onClick={() => deleteTransaksi(transaksi.id_transaksi)}><img className='w-7' src={deletesvg} /></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -191,10 +198,10 @@ export default function TransaksiPage() {
                     </div>
                     <div className='flex justify-center my-4'>
                         <button onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} className='btn btn-primary mr-2'>
-                            Sebelumnya
+                            <img className='w-7' src={back} />
                         </button>
                         <button onClick={() => paginate(currentPage + 1)} disabled={indexOfLastItem >= filteredTransaksi.length} className='btn btn-primary'>
-                            Selanjutnya
+                            <img className='w-7' src={next} />
                         </button>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ import Cookies from 'js-cookie';
 import api from '../../services/api';
 import SidebarMenu from '../../components/SidebarMenu';
 import Footer from '../../components/Footer';
+import show from "../../icon/show.svg"
+import hide from "../../icon/hide.svg"
 
 export default function updatePassword() {
     const navigate = useNavigate(); 
@@ -92,9 +94,13 @@ export default function updatePassword() {
                                                 onClick={togglePasswordVisibility}
                                             >
                                                 {showPassword ? (
-                                                    <span>Hide</span>
+                                                    <span>
+                                                        <img src={show} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 ) : (
-                                                    <span>Show</span>
+                                                    <span>
+                                                        <img src={hide} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 )}
                                             </button>
                                         </label>
@@ -115,9 +121,13 @@ export default function updatePassword() {
                                                 onClick={togglePasswordVisibilityNew}
                                             >
                                                 {showNewPassword ? (
-                                                    <span>Hide</span>
+                                                    <span>
+                                                        <img src={show} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 ) : (
-                                                    <span>Show</span>
+                                                    <span>
+                                                        <img src={hide} alt="Show Password" className="h-5 w-5" />
+                                                    </span>
                                                 )}
                                             </button>
                                         </label>

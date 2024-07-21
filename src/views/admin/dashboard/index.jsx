@@ -2,6 +2,12 @@ import SidebarMenu from '../../../components/SidebarMenu';
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie'
 import Footer from '../../../components/Footer';
+import DataStatus from './components/DataStatus';
+import DataSetiapBulan from './components/DataSetiapBulan';
+import TotalTransaksi from './components/TotalTransaksi';
+import TotalPakaian from './components/TotalPakaian';
+import TotalPelanggan from './components/TotalPelanggan';
+
 
 export default function Dashboard() {
     const [user, setUser] = useState([]);
@@ -21,15 +27,33 @@ export default function Dashboard() {
                     <SidebarMenu />
                 </div>
 
-                <div className='flex justify-center'>
+                <div className='flex justify-center mb-5'>
                     <div>
                         <div className='text-center font-semibold text-2xl'>
                             Dashboard
                         </div>
-                        <p>masih buat dashboard</p>
-                        <div>
+                        {/* <div>
                             Selamat Datang, <strong>{user?.username}</strong>
-                        </div>
+                        </div> */}
+                    </div>
+                </div>
+                <div className='container mx-auto flex gap-5 items-center justify-center align-items-center'>
+                    <div className='bg-primary/20 py-5 px-5 rounded-lg'>
+                        <TotalPelanggan />
+                    </div>
+                    <div className='bg-primary/20 py-5 px-5 rounded-lg'>
+                        <TotalPakaian />
+                    </div>
+                    <div className='bg-primary/20 py-5 px-5 rounded-lg'>
+                        <TotalTransaksi />
+                    </div>
+                </div>
+                <div className='container mx-auto flex gap-5 items-center'>
+                    <div className='bg-primary/20 rounded-lg'>
+                        <DataStatus />
+                    </div>
+                    <div>
+                        <DataSetiapBulan />
                     </div>
                 </div>
             </div>
