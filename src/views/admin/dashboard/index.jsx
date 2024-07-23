@@ -7,7 +7,9 @@ import DataSetiapBulan from './components/DataSetiapBulan';
 import TotalTransaksi from './components/TotalTransaksi';
 import TotalPakaian from './components/TotalPakaian';
 import TotalPelanggan from './components/TotalPelanggan';
-
+import TotalTransaksiHariIni from './components/TotalTransaksiHariIni';
+import TotalTransaksiBulaniIni from './components/TotalTransaksiBulanIni';
+import TotalTransaksiTahuniIni from './components/TotalTransaksiTahunIni';
 
 export default function Dashboard() {
     const [user, setUser] = useState([]);
@@ -54,6 +56,20 @@ export default function Dashboard() {
                     </div>
                     <div>
                         <DataSetiapBulan />
+                    </div>
+                    <div className='bg-primary/10 rounded-lg mx-5'>
+                        <div className='text-center font-semibold text-lg mb-5 my-2'>
+                            <p>Seluruh pemasukan</p>
+                        </div>
+                        <div className='bg-primary/20 py-5 mx-5 rounded-lg mb-5'>
+                            <TotalTransaksiHariIni />
+                        </div>
+                        <div className='bg-primary/20 py-5 mx-5 rounded-lg mb-5'>
+                            <TotalTransaksiBulaniIni />
+                        </div>
+                        <div className='bg-primary/20 py-5 mx-5 px-3 rounded-lg mb-5'>
+                            <TotalTransaksiTahuniIni />
+                        </div>
                     </div>
                 </div>
             </div>
